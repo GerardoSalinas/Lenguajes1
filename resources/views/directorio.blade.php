@@ -18,8 +18,8 @@
                 <div class="p-6">
 
                 <p>
-                    <a href="#" class="btn btn-primary">Agregar nuevo</a>
-                    <a href="#" class="btn btn-success">Buscar</a>
+                    <a href="{{route ('crearEntrada')}}" class="btn btn-primary">Agregar nuevo</a>
+                    <a href="buscarEntrada" class="btn btn-success">Buscar</a>
                 </p>
 
                 <table class="table">
@@ -32,18 +32,20 @@
                         <th scope="col">Eliminar</th>
                     </thead>
                     <tbody>
+                        @foreach ($registros as $registro)
                             <tr>
-                                <td>0001</td>
-                                <td>Julio</td>
-                                <td>Cortez</td>
-                                <td>9999</td>
+                                <td>{{$registro->codigoEntrada}}</td>
+                                <td>{{$registro->nombre}}</td>
+                                <td>{{$registro->apellido}}</td>
+                                <td>{{$registro->telefono}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-info">Ver</a>
+                                    <a href="{{ route('ver.contactos',['codigo'=>$registro->codigoEntrada]) }}" class="btn btn-info">Ver</a>
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-danger">Eliminar</a>
+                                    <a href="{{ route('vista.eliminar.registro',['codigo'=>$registro->codigoEntrada]) }}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
+                        @endforeach
                     </tbody>
 
                 </table>

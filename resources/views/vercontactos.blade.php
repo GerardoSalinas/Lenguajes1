@@ -36,24 +36,25 @@
         
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+            <!-- dark:bg-gray-800 -->
+                <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="card">
                             <h3 class="card-header">Lista de contactos</h3>
                             <div class="card-body">
                                 <p class="card-text">
                                     <label for="">C&oacute;digo</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" value="{{$registro->codigoEntrada}}" readonly>
                                     <label for="">Nombre</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" value="{{$registro->nombre}}" readonly>
                                     <label for="">Apellido</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" value="{{$registro->apellido}}" readonly>
 
                                     <p>
                                         <button class="btn btn-primary">Agregar nuevo contacto</button>
-                                        <a href="#" class="btn btn-info">Regresar</a>
+                                        <a href="{{ route ('directorio')}}" class="btn btn-info">Regresar</a>
                                     </p>
+
 
                                     <table class="table">
                                         <thead>                                            
@@ -65,10 +66,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                    <td>1</td>                                                    
-                                                    <td>Julio</td>
-                                                    <td>Cortez</td>
-                                                    <td>9999</td>                                                    
+                                                    <td>{{$registro->codigoEntrada}}</td>                                                    
+                                                    <td>{{$registro->nombre}}</td>                                                    
+                                                    <td>{{$registro->apellido}}</td>                                                    
+                                                    <td>{{$registro->telefono}}</td>                                                    
                                                     <td>
                                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                                     </td>
